@@ -10,8 +10,9 @@ This algorithm works as follows:
 	in the vocab file, then choose the 10 most frequent words from these adjusted values.
 
 	Why is this ok? Since documents are very short, a frequency analysis on the meta-document
-	is a reasonable approximation of cooccurrence, which is then adjusted by the overall
-	frequencies of the various words in the vocabulary. 
+	is a reasonable approximation of cooccurrence (anything in the document is "close" to the
+	word in question), and we can then adjust this by the overall frequencies of the various 
+	words in the vocabulary, to prevent an overrepresentation of "common" words in the answer. 
 
 Very simple -- but on spot inspection, it seems to provide reasonable results.
 
