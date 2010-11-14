@@ -1,3 +1,5 @@
+# takes two arguments, the name of the vocab file and the name of the document file
+
 def parse_vocab vocab, docs
 	count = 0
 	f = File.open(vocab, "r")
@@ -44,8 +46,5 @@ def top_ten h, word
 	}
 	return str
 end
-
-#answer = word_freq(file, word)
-#puts top_ten(answer, word)
 
 parse_vocab ARGV[0], ARGV[1]
