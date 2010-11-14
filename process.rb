@@ -20,18 +20,18 @@ end
 
 
 def word_freq the_file, excluded
-	# get word frequencies from file, excluding a word 
+	# get word frequencies from file, excluding the original word 
 	h = Hash.new
 	f = File.open(the_file, "r")
 	f.each_line { |line|
   	words = line.split
   	words.each { |w|
 			if w != excluded 
-    		if h.has_key?(w)
-      		h[w] = h[w] + 1
-    		else
+				if h.has_key?(w)
+					h[w] = h[w] + 1
+				else
       		h[w] = 1
-    		end
+				end
 			end
   	}
 	}
