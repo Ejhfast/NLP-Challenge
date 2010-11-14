@@ -30,10 +30,10 @@ def word_freq the_file, excluded
 				if h.has_key?(w)
 					h[w] = h[w] + 1
 				else
-      		h[w] = 1
+					h[w] = 1
 				end
 			end
-  	}
+		}
 	}
 	return h
 end
