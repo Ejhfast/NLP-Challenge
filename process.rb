@@ -1,4 +1,4 @@
-# takes two arguments, the name of the vocab file and the name of the document file
+# takes three arguments, the names of the vocab file, document file, and output file
 
 def parse_vocab vocab, docs, out
 	count = 0
@@ -18,6 +18,7 @@ def parse_vocab vocab, docs, out
 		if tmp.size >= 10
 			fo.puts word + " " + tmp.first(10).join(" ")
 		else
+			# not ten relations? ...
 			# look through more tenuous connections
 			rest = 10 - tmp.size
 			fo.puts word + " " + tmp.join(" ") + " " + tmp.first(2).map{|x| ans[x].keys.sort_by{|y| -1 * ans[x][y]}}.flatten.uniq.select{|x| not tmp.include?(x)}.first(rest).join(" ")
@@ -28,7 +29,7 @@ end
 
 
 def word_freq the_file, freq_hash
-	# get word frequencies from file, excluding the original word 
+	# get word cooccurence information
 	h = Hash.new(nil)
 	count = 0
 	f = File.open(the_file, "r")
