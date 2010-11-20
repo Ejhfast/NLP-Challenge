@@ -1,19 +1,6 @@
 A Solution to Joseph Turian's NLP Challenge
 
 For details about the challenge: http://metaoptimize.com/blog/2010/11/05/nlp-challenge-find-semantically-related-terms-over-a-large-vocabulary-1m/
+For my solution: http://blog.ethanjfast.com/images/final8.zip
+For a writeup: http://blog.ethanjfast.com/nlp-challenge
 
-This algorithm works as follows:
-
-	For a given word in the vocabuary, find all documents in which that word appears. 
-	Concatenate these documents together, and run a frequency analysis on this new
-	"meta-document." Adjust that analysis with the frequency data provided originally
-	in the vocab file, then choose the 10 most frequent words from these adjusted values.
-
-	Why is this ok? Since documents are very short, a frequency analysis on the meta-document
-	is a reasonable approximation of cooccurrence (anything in the document is "close" to the
-	word in question), and we can then adjust this by the overall frequencies of the various 
-	words in the vocabulary, to prevent an overrepresentation of "common" words in the answer. 
-
-Very simple -- but on spot inspection, it seems to provide reasonable results.
-
- 
