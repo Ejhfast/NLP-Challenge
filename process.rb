@@ -29,7 +29,7 @@ end
 
 
 def word_freq the_file, freq_hash
-	# get word cooccurence information
+	# get word co-occurence information
 	h = Hash.new(nil)
 	count = 0
 	f = File.open(the_file, "r")
